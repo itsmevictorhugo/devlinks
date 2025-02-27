@@ -75,6 +75,11 @@ body * {
   left: 0;
   transform: translateY(-50%);
   top: 50%;
+  animation: slide-back 0.2s;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -89,9 +94,7 @@ body * {
 }
 
 .light #switch button {
-  /* transform: translateY(-50%) translateX(-100%); */
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
 }
 
 /* Links */
@@ -157,5 +160,24 @@ footer {
   }
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
